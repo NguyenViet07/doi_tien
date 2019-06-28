@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tien</title>
+
+</head>
+<body>
+<form>
+    Amount
+    <input type="text" name="amount" id ="cot1"/>
+    From Currency
+    <select name="fromCurrency" id ="cot2">
+        <option value= "1">VN đồng</option>
+        <option value= "2">USD</option>
+    </select>
+    To Curency
+    <select name="toCurrency" id="cot3">
+        <option value= "2">USD</option>
+        <option value= "1">VN đồng</option>
+    </select>
+    <button type="button" onclick="myFunction()" >Convert</button>
+    <p id="doitien"></p>
+
+</form>
+
+<script>
+
+
+    function myFunction() {
+        let a = parseFloat(document.getElementById("cot1").value);
+        let c2 =  parseInt(document.getElementById("cot2").value);
+        let c3 = parseInt(document.getElementById("cot3").value);
+        let b = a;
+        if ( c2 === 1 && c3 === 2){
+            b = a/23000
+        };
+        if ( c2 === 1 && c3 === 1){
+            b = a;
+        };
+        if ( c2 === 2 && c3 === 1){
+            b = a*23000;
+        };
+        if ( c2 === 2 && c3 === 2){
+            b = a;
+        };
+        if(c3 === 1)
+            document.getElementById("doitien").innerHTML = b+" VND" ;
+        else
+            document.getElementById("doitien").innerHTML = b+" USD" ;
+    }
+</script>
+</body>
+</html>
